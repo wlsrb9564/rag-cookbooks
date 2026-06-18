@@ -1,0 +1,65 @@
+[project]
+name = "rag-cookbooks"
+version = "0.1.0"
+description = "Advanced + Agentic RAG Cookbooks"
+requires-python = ">=3.11"
+dependencies = [
+    # LangChain core stack
+    "langchain>=0.3.0,<0.4.0",
+    "langchain-core>=0.3.0,<0.4.0",
+    "langchain-openai>=0.2.0,<0.3.0",
+    "langchain-anthropic>=0.3.0",        # Claude 연동
+    "langchain-community>=0.3.0,<0.4.0",
+    "langgraph>=0.2.0,<0.3.0",
+    "langchainhub>=0.1.0",
+    "langsmith>=0.1.0",
+    # LLM API clients
+    "openai>=1.0.0",
+    "anthropic>=0.40.0",                 # Claude API
+    # Vector stores (faiss-gpu → faiss-cpu, GPU 불필요)
+    "faiss-cpu>=1.8.0",
+    "chromadb>=0.5.0,<0.6.0",
+    "qdrant-client>=1.9.0",              # fusion_rag
+    # Retrieval
+    "rank-bm25>=0.2.2",                  # hybrid_rag
+    "tavily-python>=0.3.0",              # agentic web search
+    # Data
+    "datasets>=2.20.0",
+    "pandas>=2.0.0",
+    # Evaluation (Athina AI)
+    "athina>=1.0.0",
+    # Finance tools (react notebook)
+    "yfinance>=0.2.0",
+    # Utilities
+    "tiktoken>=0.7.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "typing-extensions>=4.12.0",
+    # Jupyter
+    "ipykernel>=6.0.0",
+    "notebook>=7.0.0",
+    "ipywidgets>=8.0.0",
+    "setuptools>=69.0,<70.0",    # pkg_resources 포함 마지막 버전 (athina 호환)
+    "langchain-chroma>=0.2.2",
+    "ragas>=0.2.15",
+    "llama-index>=0.11.23",
+    "llama-index-embeddings-openai>=0.2.5",
+    "llama-index-llms-openai>=0.2.16",
+    "llama-index-vector-stores-chroma>=0.3.0",
+    "llama-index-retrievers-bm25>=0.4.0",
+    "llama-index-readers-file>=0.3.0",
+]
+
+[project.optional-dependencies]
+# crewai는 무거운 의존성이므로 선택적으로 설치
+agent = [
+    "crewai>=0.80.0",
+]
+
+[tool.uv]
+python-preference = "only-system"
+# grpcio-tools는 setuptools>=77 요구하지만 런타임엔 불필요 → override로 69.x 유지
+override-dependencies = ["setuptools>=69.0,<70.0"]
+
+[dependency-groups]
+dev = []
