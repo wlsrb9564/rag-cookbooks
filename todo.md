@@ -42,21 +42,21 @@ load_dotenv()
 
 - [x] 공통 패치 적용
 - [x] `pip install` 셀 삭제 (이미 설치됨)
-- [ ] 학습 완료
+- [x] 학습 완료
 
 ### 2. `fusion_rag.ipynb` ★★★
 > 쿼리 1개 → 여러 서브쿼리 생성 → Reciprocal Rank Fusion으로 순위 합산
 
-- [ ] 공통 패치 적용
-- [ ] `pip install` 셀 삭제
-- [ ] 학습 완료
+- [x] 공통 패치 적용
+- [x] `pip install` 셀 삭제
+- [x] 학습 완료
 
 ### 3. `contextual_rag.ipynb` ★★★
 > 검색된 문서를 LLM으로 압축 → 관련 정보만 남겨 정밀도 향상
 
-- [ ] 공통 패치 적용
-- [ ] `pip install` 셀 삭제
-- [ ] 학습 완료
+- [x] 공통 패치 적용
+- [x] `pip install` 셀 삭제
+- [x] 학습 완료
 
 ### 4. `rewrite_retrieve_read.ipynb` ★★ (여유될 때)
 - [ ] 공통 패치 적용
@@ -75,10 +75,10 @@ load_dotenv()
 ### 6. `react.ipynb` ★★★ (필수)
 > ReAct = Reasoning + Acting. LangChain + CrewAI로 구현
 
-- [ ] 공통 패치 적용
-- [ ] `pip install` 셀 삭제
+- [x] 공통 패치 적용
+- [x] `pip install` 셀 삭제
 - [ ] crewai 설치: `uv sync --extra agent`
-- [ ] 학습 완료
+- [x] 학습 완료
 
 ### 7. `reflexion.ipynb` ★★ (여유될 때)
 > 자기 반성 루프로 응답 개선
